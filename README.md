@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi there👋, I'm Pratik, and I try and tackle infrastructre in the ☁️ 
 
 <!--
 **pat-glitch/pat-glitch** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
