@@ -16,8 +16,8 @@ jobs:
       - name: Fetch Badges from Credly
         uses: michaelcontento/credly-import-action@v1
         with:
-          name: pratik-tamgole  # Replace with your Credly username
-          datafile: data/CredlyBadges.json  # Optional: Custom JSON path
+          username: pratik-tamgole  # Replace with your Credly username
+          datafile: data/credly_badges.json  # Optional: Custom JSON path
           imagedir: assets/badges  # Optional: Custom image directory
           skip_image_downloading: 0  # Optional: Set to 1 to skip image downloads
 
