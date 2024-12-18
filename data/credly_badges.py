@@ -1,13 +1,32 @@
 import json
 
-def update_readme(json_file, readme_file):
-    with open(json_file, "r") as f:
-        badges = json.load(f)
+# File paths
+BADGE_DATA_FILE = "data/credly_badges.json"
+README_FILE = "README.md"
 
-    with open(readme_file, "w") as f:
-        f.write("# My Certifications\n\n")
-        for badge in badges:
-            f.write(f"![{badge['name']}]({badge['image']})\n")
-            f.write(f"**{badge['name']}** - {badge['issued_at']}\n\n")
+def load_badge_data():
+    with open(BADGE_DATA_FILE, "r") as f:
+        return json.load(f)
 
-update_readme("data/CredlyBadges.json", "README.md")
+def update_readme(badge_data):
+    # Start writing the README content
+    content = "# My Certifications\n\n"
+    content += "Below is the list of my certifications fetched from [Credly](https://www.credly.com/):\n\n"
+
+    for badge in badge_data:
+        badge_name = badge["name"]
+        badge_image = badge["image"]
+        badge_issued = badge["issued_at"]
+        content += f"![{badge_name}]({badge_image})\n"
+        content += f"**{badge_name}** - Issued on {badge_issued}\n\n"
+
+    # Write to README.md
+    with open(README_FILE, "w") as f:
+        f.write(content)
+
+def main():
+    badge_data = load_badge_data()
+    update_readme(badge_data)
+
+if __name__ == "__main__":
+    main()

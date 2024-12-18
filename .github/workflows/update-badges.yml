@@ -1,13 +1,13 @@
-name: Fetch Credly Badges
+name: Fetch Credly Badges and Update README
 
 on:
   schedule:
-    - cron: "0 0 * * 0" # Runs every Sunday
-  workflow_dispatch: # Allow manual triggering
+    - cron: "0 0 * * 0"  # Runs every Sunday
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
   fetch-credly-badges:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
@@ -16,15 +16,20 @@ jobs:
       - name: Fetch Badges from Credly
         uses: michaelcontento/credly-import-action@v1
         with:
-          username: pratik-tamgole  # Replace with your Credly username
-          datafile: data/credly_badges.json  # Optional: Custom JSON path
-          imagedir: assets/badges  # Optional: Custom image directory
-          skip_image_downloading: 0  # Optional: Set to 1 to skip image downloads
+          username: pratik-tamgole
+          datafile: data/CredlyBadges.json
+          imagedir: assets/badges
+
+      - name: Update README with Badge Data
+        run: |
+          python3 update_readme.py
 
       - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git config user.name "pat-gltich"
+          git config user.name "pat-glitch"
           git config user.email "pratiktamgole@gmail.com"
-          git add .
-          git commit -m "Update Credly badges"
+          git add README.md
+          git commit -m "Update README with latest badges"
           git push
