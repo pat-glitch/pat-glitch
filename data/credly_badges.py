@@ -11,7 +11,6 @@ def load_badge_data():
 def update_readme(badge_data):
     # Start writing the README content
     content = "# My Certifications\n\n"
-    content += "Below is the list of my certifications fetched from [Credly](https://www.credly.com/):\n\n"
 
     for badge in badge_data:
         badge_name = badge["name"]

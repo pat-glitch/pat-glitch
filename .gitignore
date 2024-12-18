@@ -1,2 +1,5 @@
 # Ignore python files
 *.pyc
+
+# ignore the assets folder
+assets/
