@@ -1,0 +1,30 @@
+name: Fetch Credly Badges
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Runs every Sunday
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  fetch-credly-badges:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Fetch Badges from Credly
+        uses: michaelcontento/credly-import-action@v1
+        with:
+          name: pratik-tamgole  # Replace with your Credly username
+          datafile: data/CredlyBadges.json  # Optional: Custom JSON path
+          imagedir: assets/badges  # Optional: Custom image directory
+          skip_image_downloading: 0  # Optional: Set to 1 to skip image downloads
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "pat-gltich"
+          git config user.email "pratiktamgole@gmail.com"
+          git add .
+          git commit -m "Update Credly badges"
+          git push
