@@ -22,7 +22,7 @@ jobs:
 
       - name: Update README with Badge Data
         run: |
-          python3 update_readme.py
+          python3 credly_badges.py
 
       - name: Commit and Push Changes
         env:
