@@ -4,6 +4,16 @@ import json
 BADGE_DATA_FILE = "data/credly_badges.json"
 README_FILE = "README.md"
 
+# Whitelisted certifications
+WHITELIST = [
+    "Microsoft Certified: Azure Fundamentals",
+    "Associate Cloud Engineer Certification",
+    "Cloud Digital Leader Certification",
+    "Professional Cloud Network Engineer Certification",
+    "Professional Cloud Security Engineer Certification",
+    "Professional Cloud DevOps Engineer Certification"
+]
+
 def load_badge_data():
     with open(BADGE_DATA_FILE, "r") as f:
         data = json.load(f)
@@ -19,12 +29,14 @@ def update_readme(badge_data):
     content += "Here are my latest certifications:\n\n"
 
     for badge in badge_data:
-        badge_name = badge["badge_template"]["name"]  # Accessing name inside "badge_template"
-        badge_image = badge["badge_template"]["image_url"]  # Accessing image_url
-        badge_issued = badge.get("issued_at_date", "Unknown Date")  # Safely get issued date
+        badge_name = badge["badge_template"]["name"]
+        badge_image = badge["badge_template"]["image_url"]
+        badge_issued = badge.get("issued_at_date", "Unknown Date")
 
-        content += f"![{badge_name}]({badge_image})\n"
-        content += f"**{badge_name}** - Issued on {badge_issued}\n\n"
+        # Only include badges in the whitelist
+        if badge_name in WHITELIST:
+            content += f'<img src="{badge_image}" alt="{badge_name}" width="200px">\n'
+            content += f"**{badge_name}** - Issued on {badge_issued}\n\n"
 
     # Write to README.md
     with open(README_FILE, "w") as f:
