@@ -38,7 +38,7 @@ def update_readme(badge_data):
 
         # Only include badges in the whitelist
         if badge_name in WHITELIST:
-            content += f'  <img src="{badge_image}" alt="{badge_name}" width="150px">\n'
+            content += f'  <img src="{badge_image}" alt="{badge_name}" width="100px">\n'
 
     content += "</div>\n"
 
