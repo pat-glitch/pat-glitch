@@ -14,6 +14,9 @@ WHITELIST = [
     "Professional Cloud DevOps Engineer Certification"
 ]
 
+# Credly profile URL
+CREDLY_PROFILE_URL = "https://www.credly.com/users/pratik-tamgole"
+
 def load_badge_data():
     with open(BADGE_DATA_FILE, "r") as f:
         data = json.load(f)
@@ -26,17 +29,18 @@ def load_badge_data():
 def update_readme(badge_data):
     # Start writing the README content
     content = "# My Certifications\n\n"
-    content += "Here are my latest certifications:\n\n"
+    content += f"Check out my full certification profile on [Credly]({CREDLY_PROFILE_URL}).\n\n"
+    content += "<div style='display: flex; gap: 10px; flex-wrap: wrap;'>\n"
 
     for badge in badge_data:
         badge_name = badge["badge_template"]["name"]
         badge_image = badge["badge_template"]["image_url"]
-        badge_issued = badge.get("issued_at_date", "Unknown Date")
 
         # Only include badges in the whitelist
         if badge_name in WHITELIST:
-            content += f'<img src="{badge_image}" alt="{badge_name}" width="200px">\n'
-            content += f"**{badge_name}** - Issued on {badge_issued}\n\n"
+            content += f'  <img src="{badge_image}" alt="{badge_name}" width="150px">\n'
+
+    content += "</div>\n"
 
     # Write to README.md
     with open(README_FILE, "w") as f:
