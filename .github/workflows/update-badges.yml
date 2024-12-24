@@ -17,12 +17,12 @@ jobs:
         uses: michaelcontento/credly-import-action@v1
         with:
           username: pratik-tamgole
-          datafile: pat-glitchdata/CredlyBadges.json
-          imagedir: pat-glitch/assets/badges
+          datafile: data/CredlyBadges.json
+          imagedir: assets/badges
 
       - name: Update README with Badge Data
         run: |
-          python3 pat-glitch/data/credly_badges.py
+          python3 data/credly_badges.py
 
       - name: Commit and Push Changes
         env:
