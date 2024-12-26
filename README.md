@@ -1,4 +1,4 @@
-<h6>Hi, I'm Pratik👋</h6>
+<h6>**Hi, I'm Pratik👋**</h6>
 
 <p1>I'm a budding backend engineer, trying to figure out how systems work, learning more about open source software, and trying and contributing to it! Also recently, I have picked up a keen interest in all things Cloud, learning about system architectures, as well as SRE/DEVOPS practices</p1>
 
