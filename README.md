@@ -4,8 +4,9 @@
 
 <p2>As a student, I’m learning to write software that’s easy for others to use by focusing on testing, documenting, and making it clear to understand. I’m trying to design APIs that are simple and user-friendly, and I’m learning to avoid over-complicating things too early. I also see the value in writing good documentation as part of the development process.</p2>
 
-<p3>I mainly work with Go, but am also familiar with C, C++, and Python, and am trying to learn Rust.</p3>
+<p3>I mainly work with Go, but I am also familiar with C, C++, and Python, and I am trying to learn Rust.</p3>
 
+<p4>Below are some of my projects and challenges that I took part in, the most recent being Advent Of Code 2024!</p4>
 
 
 # My Certifications
