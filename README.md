@@ -1,6 +1,9 @@
 <h1><strong><centre>Hi, I'm Pratik👋</centre></strong></h1>
 
-<p1>The quote I want to live by as an Engineeer is:"Normal people … believe that if it ain’t broke, don’t fix it. Engineers believe that if it ain’t broke, it doesn’t have enough features yet.” – Scott Adams</p1>
+<p1>The quote I want to live by as an Engineeer is:
+              "Normal people … believe that if it ain’t broke, don’t fix it. Engineers believe that if it ain’t broke, it doesn’t have enough features yet.” 
+                                                                                                                                            – Scott Adams
+</p1>
 
 <p2>I'm a budding backend engineer, trying to figure out how systems work, learning more about open source software, and trying and contributing to it! Also recently, I have picked up a keen interest in all things Cloud, learning about system architectures, as well as SRE/DEVOPS practices</p1>
 
