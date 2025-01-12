@@ -1,19 +1,3 @@
-<h1> Hi, I'm Pratik👋🏼</h1>
-
-<p1 style="text-align: center;">The quote I want to live by as an Engineer is:<br>
-"Normal people … believe that if it ain’t broke, don’t fix it. Engineers believe that if it ain’t broke, it doesn’t have enough features yet.”<br>
-– Scott Adams
-</p1>
-
-
-<p2>I'm a budding backend engineer, trying to figure out how systems work, learning more about open source software, and trying and contributing to it! Also recently, I have picked up a keen interest in all things Cloud, learning about system architectures, as well as SRE/DEVOPS practices</p1>
-
-<p3>As a student, I’m learning to write software that’s easy for others to use by focusing on testing, documenting, and making it clear to understand. I’m trying to design APIs that are simple and user-friendly, and I’m learning to avoid over-complicating things too early. I also see the value in writing good documentation as part of the development process.</p2>
-
-<p4>I mainly work with Go, but I am also familiar with C, C++, and Python, and I am trying to learn Rust.</p3>
-
-<p5>Below are some of my projects and challenges that I took part in, the most recent being Advent Of Code 2024!</p4>
-
 # My Certifications
 
 Check out my full certification profile on [Credly](https://www.credly.com/users/pratik-tamgole).
